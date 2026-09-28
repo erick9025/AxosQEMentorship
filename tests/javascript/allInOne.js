@@ -15,5 +15,5 @@ console.log(msg + erickDOB);
 
 let ordinal = 1;
 listYearsFinal.forEach(year => {    
-    console.log(`#${ordinal++} Pure TypeScript Even Year: ${year}`);
+    console.log(`#${ordinal++} Pure JavaScript Even Year: ${year}`);
 });
