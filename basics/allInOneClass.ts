@@ -1,6 +1,5 @@
-export class September28 {
-
-    public typescriptTest(): void {
+export class AllInOneClass {
+    public static printAll90sDecadeEvenYearsClass(): void {
         let listYearsFinal: number[] = [];
 
         for(let iterator = 1990; iterator < 2000; iterator++) {
@@ -11,10 +10,9 @@ export class September28 {
             }
         }
 
-        listYearsFinal.forEach(year => {
-            let ordinal: number = 1;
-
+        let ordinal: number = 1;
+        listYearsFinal.forEach(year => {    
             console.log(`#${ordinal++} Even Year: ${year}`);
-        })
+        });
     }
 }

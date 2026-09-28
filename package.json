@@ -4,7 +4,10 @@
   "description": "Axos QE Mentorship with Playwright + TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Erick Jimenez Rodriguez\""
+    "test": "echo \"Erick Jimenez Rodriguez\"",
+    "run:ts": "tsx",
+    "typecheck": "tsc --noEmit",
+    "test28Sep": "npx playwright test testEvenYearsInTwoWays.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,8 @@
   "homepage": "https://github.com/erick9025/AxosQEMentorship#readme",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
-    "@types/node": "^26.6.2"
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
   }
 }
