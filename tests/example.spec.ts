@@ -19,7 +19,7 @@ test('get started link', async ({ page }) => {
 
 
 //copy
-test('has facebook', async ({ page }) => {
+test(' facebook', async ({ page }) => {
   await page.goto('https://facebook.com/');
 
   await page.waitForTimeout(1000);
