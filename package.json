@@ -4,6 +4,7 @@
   "description": "Axos QE Mentorship with Playwright + TypeScript",
   "main": "index.js",
   "scripts": {
+    "regen": "npx playwright show-report",
     "test": "echo \"Erick Jimenez Rodriguez\"",
     "run:ts": "tsx",
     "typecheck": "tsc --noEmit",

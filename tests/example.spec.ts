@@ -1,26 +1,11 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
+import { AxosDebitCard } from './homeworks/Erick Jimenez/W2 E3/axosDebitCard';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('Testing debit cards (interface + class)', async () => {
+  let card1: AxosDebitCard = new AxosDebitCard();
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+  card1.deposit(10_000);
+  card1.withdraw(555);
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
-
-
-//copy
-test('Open facebook', async ({ page }) => {
-  await page.goto('https://facebook.com/');
-
-  await page.waitForTimeout(1000);
+  console.log("Final balance: " + card1.balance);
 });
