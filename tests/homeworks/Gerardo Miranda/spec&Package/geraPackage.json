@@ -1,0 +1,31 @@
+{
+  "name": "axosqementorship",
+  "version": "1.0.0",
+  "description": "Axos QE Mentorship with Playwright + TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "tarea30Sep": "npx playwright show-report",
+    "test": "echo \"Erick Jimenez Rodriguez\"",
+    "run:ts": "tsx",
+    "typecheck": "tsc --noEmit",
+    "test30Sep": "npx playwright test gera.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erick9025/AxosQEMentorship.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/erick9025/AxosQEMentorship/issues"
+  },
+  "homepage": "https://github.com/erick9025/AxosQEMentorship#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
