@@ -8,7 +8,7 @@ import { ICasoDePrueba } from "./iCasoPrueba";
 export class Caso1 implements ICasoDePrueba {
   public id: number = 1;
   public titulo: string = 'Login con credenciales válidas';
-  public estado: 'Pass' | 'Fail' = 'Pass';
+  public estado: 'Passed' | 'Failed' = 'Passed';
 }
 
 

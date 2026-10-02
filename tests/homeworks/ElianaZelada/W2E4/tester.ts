@@ -14,5 +14,5 @@ class Tester {
 }
  
 // Creamos una instancia (un objeto) de la clase.
-const tester = new Tester('Eliana Zelada');
+const tester = new Tester('Eliana Zelada Alvarez');
 tester.iniciarPruebas();
