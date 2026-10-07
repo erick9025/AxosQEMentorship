@@ -9,5 +9,5 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["node"]
   },
-  "include": ["basics/**/*.ts", "tests/**/*.ts", "playwright.config.ts"]
+  "include": ["basics/**/*.ts", "tests/**/*.ts", "playwright.config.ts", "tests/homeworks/Erick Jimenez/oct 07/ternaryOperator.js"]
 }
