@@ -8,7 +8,8 @@
     "test": "echo \"Erick Jimenez Rodriguez\"",
     "run:ts": "tsx",
     "typecheck": "tsc --noEmit",
-    "test28Sep": "npx playwright test testEvenYearsInTwoWays.spec.ts"
+    "testSep28": "npx playwright test testEvenYearsInTwoWays.spec.ts",
+    "testOct07": "npx playwright test oct7.spec.ts --headed --workers=6 --retries=1"
   },
   "repository": {
     "type": "git",
