@@ -6,6 +6,8 @@
   "scripts": {
     "regen": "npx playwright show-report",
     "test": "echo \"Erick Jimenez Rodriguez\"",
+    "test:jhon": "playwright test \"tests/homeworks/Jhon Ponce\"",
+    "report": "playwright show-report",
     "run:ts": "tsx",
     "typecheck": "tsc --noEmit",
     "test28Sep": "npx playwright test testEvenYearsInTwoWays.spec.ts"
