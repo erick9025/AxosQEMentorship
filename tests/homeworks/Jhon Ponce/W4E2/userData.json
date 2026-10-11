@@ -1,0 +1,14 @@
+{
+  "name": "Jhon Ponce",
+  "email": "jhon.ponce@example.com",
+  "gender": "Female",
+  "mobile": "5551234567",
+  "dateOfBirth": "1990-05-15",
+  "subject": "Software Testing",
+  "hobbies": ["Sports", "Reading", "Music"],
+  "address": "123 Test Street, Test City",
+  "state": "Uttar Pradesh",
+  "city": "Agra",
+  "profilePictureFileName": "profile-picture.txt",
+  "profilePictureContent": "Sample profile picture placeholder"
+}
