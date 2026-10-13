@@ -1,0 +1,10 @@
+{
+    "credentials": {
+        "username": "standard_user",
+        "password": "secret_sauce"
+    },
+    "productsName": [
+        "Sauce Labs Backpack",
+        "Sauce Labs Fleece Jacket"
+    ]
+}
