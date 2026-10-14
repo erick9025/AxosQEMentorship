@@ -1,7 +1,11 @@
-import { Locator, expect } from "@playwright/test";
-import { BasePage } from "./parent/basePage";
+import { Page, Locator, expect } from "@playwright/test"
 
-export class SauceLabsLoginPage extends BasePage {
+export class SauceLabsLoginPage {
+    private readonly _myPage: Page
+
+    constructor(page: Page) {
+        this._myPage = page
+    }
 
     // MORE PERMISIVE TO LESS PERMISIVE
     // LESS RESTRICTIVE TO MORE RESTRICTIVE
@@ -9,21 +13,28 @@ export class SauceLabsLoginPage extends BasePage {
     // protected: access from the class and subclasses
     // private: access from the class only
 
-    private readonly usernameFiled: Locator = this.page.locator("#user-name");
-    private readonly passwordFiled: Locator = this.page.locator("#password");
-    private readonly loginButton: Locator = this.page.locator("#login-button");
-    private readonly productsTitle: Locator = this.page.locator(".title");
-
     public async login(username: string, password: string): Promise<void> {
         const url: string = "https://www.saucedemo.com/"
 
-        await this.navigateTo(url, "Sauce Labs Login Page");
-        await this.enterText(this.usernameFiled, "Username [Input]", username);
-        await this.enterText(this.passwordFiled, "Password [Input]", password);
-        await this.click(this.loginButton, "Login [Button]");   
-        await this.waitForPartialURL("inventory.html");
+        await this._myPage.goto(url);
+
+        const usernameFiled: Locator = this._myPage.locator("#user-name");
+        const passwordFiled: Locator = this._myPage.locator("#password");
+        const loginButton: Locator = this._myPage.locator("#login-button");
+        const productsTitle: Locator = this._myPage.locator(".title");
+
+        await usernameFiled.fill(username);
+        console.log("Entered username: " + username);
+
+        await passwordFiled.fill(password);
+        console.log("Entered password: " + password);
+        
+        await loginButton.click();
+        console.log("Clicked login button");
+
+        await this._myPage.waitForURL(/inventory/);
 
         // Wait for productsTitle to be visible
-        await expect(this.productsTitle).toBeVisible(); 
+        await expect(productsTitle).toBeVisible(); 
     }
 }

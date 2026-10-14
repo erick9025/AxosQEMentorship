@@ -1,22 +1,23 @@
-import { Locator, Page } from "@playwright/test"
-import { BasePage } from "./parent/basePage"
+import { Page, Locator, expect } from "@playwright/test"
 
-export class SauceLabsProductsPage extends BasePage {
+export class SauceLabsProductsPage {
+    private readonly _myPage: Page
+
     constructor(page: Page) {
-        super(page);
+        this._myPage = page
     }
 
     public async addProductToCart(productName: string): Promise<void> {
-        const productLocator: Locator = this.page.locator(`.inventory_item:has-text("${productName}")`);
+        const productLocator: Locator = this._myPage.locator(`.inventory_item:has-text("${productName}")`);
         const addToCartButton: Locator = productLocator.locator('button:has-text("Add to cart")');  
 
-        await this.click(addToCartButton, `Add to cart [Button] for ${productName}`);
+        await addToCartButton.click();
     }
 
     public async addProductToCartDynamic(productName: string): Promise<void> {
         const xpath: string = `//div[@class='inventory_item'][contains(., '${productName}')]/descendant::*[starts-with(@id,'add-to-cart')]`;
-        const addToCartButton: Locator = this.page.locator(xpath);
+        const addToCartButton: Locator = this._myPage.locator(xpath);
 
-        await this.click(addToCartButton, `Add to cart [Button] for ${productName}`);
+        await addToCartButton.click();
     }
 }
