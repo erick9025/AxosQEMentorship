@@ -11,13 +11,13 @@ test("Validate selection of Female radio button", async ({ page }) => {
   await femaleRadio.check();
   await expect(femaleRadio).toBeChecked();
   const GetValueButton = page.locator(
-    'button[id="buttoncheck"][class="mb-10 bg-lambda-900 border border-lambda-900 text-white rounded px-15 py-5 hover:bg-transparent hover:text-lambda-900 focus:outline-none"]',
+    'button[id="buttoncheck"]',
   );
 
   await GetValueButton.click();
   await expect(
     page.locator(
-      'p[class="text-gray-900 text-size-15 my-10 text-black radiobutton"]',
+      '#buttoncheck+p',
     ),
-  ).toHaveText("Radio button 'Female' is checked");
+  ).toHaveText("Radio button 'Female' is checked", { timeout: 5000 });
 });
