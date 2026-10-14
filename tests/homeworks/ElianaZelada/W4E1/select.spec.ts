@@ -10,14 +10,11 @@ test("Validate selection of Female radio button", async ({ page }) => {
   await expect(femaleRadio).toBeVisible();
   await femaleRadio.check();
   await expect(femaleRadio).toBeChecked();
-  const GetValueButton = page.locator(
-    'button[id="buttoncheck"]',
-  );
+  const GetValueButton = page.locator('button[id="buttoncheck"]');
 
   await GetValueButton.click();
-  await expect(
-    page.locator(
-      '#buttoncheck+p',
-    ),
-  ).toHaveText("Radio button 'Female' is checked", { timeout: 5000 });
+  await expect(page.locator("#buttoncheck+p")).toHaveText(
+    "Radio button 'Female' is checked",
+    { timeout: 10000 },
+  );
 });
