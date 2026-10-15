@@ -10,7 +10,7 @@ test.describe('Homework October 13, Data Driven Testing', () => {
 
   test('Start Page loads correctly', async ({ page }) => {
     await expect(page).toHaveTitle(/Swag Labs/);
-    
+
     const loginBox = page.locator('#login_button_container');
     await expect(loginBox).toBeVisible();
   });
