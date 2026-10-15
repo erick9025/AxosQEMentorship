@@ -2,15 +2,15 @@ import { Page, Locator } from '@playwright/test';
 
 export class LoginPage {
   readonly page: Page;
-  readonly usernameInput: Locator;
-  readonly passwordInput: Locator;
-  readonly loginButton: Locator;
+  readonly inputUsername: Locator;
+  readonly inputPassword: Locator;
+  readonly buttonLogin: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.usernameInput = page.locator('#user-name');
-    this.passwordInput = page.locator('#password');
-    this.loginButton = page.locator('#login-button');
+    this.inputUsername = page.locator('#user-name');
+    this.inputPassword = page.locator('#password');
+    this.buttonLogin = page.locator('#login-button');
   }
 
   async navigate(): Promise<void> {
@@ -18,8 +18,8 @@ export class LoginPage {
   }
 
   async login(username: string, password: string): Promise<void> {
-    await this.usernameInput.fill(username);
-    await this.passwordInput.fill(password);
-    await this.loginButton.click();
+    await this.inputUsername.fill(username);
+    await this.inputPassword.fill(password);
+    await this.buttonLogin.click();
   }
 }
