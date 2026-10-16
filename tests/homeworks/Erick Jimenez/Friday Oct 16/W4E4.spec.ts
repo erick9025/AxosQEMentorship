@@ -1,6 +1,5 @@
 ﻿import { test } from '@playwright/test';
-import { LoginPage } from './pages/loginPage';
-const credentials = require('./Credentials.json');
+import { LoginPage } from './pages/LoginPage';
 
 test.describe('Login Page Tests', () => {
 
@@ -10,8 +9,8 @@ test.describe('Login Page Tests', () => {
     loginPage = new LoginPage(page);
   });
 
-  test('Escribir and Click Actions', async () => {
+  test('Cleaner test with only high level actions (business logic)', async () => {
     await loginPage.goto();
-    await loginPage.login(credentials.user, credentials.password);
+    await loginPage.login("standard_user", "secret_sauce");
   });
 });

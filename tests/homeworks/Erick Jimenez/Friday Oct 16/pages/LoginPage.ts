@@ -8,14 +8,14 @@ export class LoginPage {
   private _initialUrl: string = "";
 
   constructor(private readonly page: Page) {
-    this._inputEmail = page.locator("input[placeholder='Email']");
-    this._inputPassword = page.locator('#input-6');
-    this._buttonLogin = page.getByRole('button', { name: 'Log in' });
-    this._footerLegalDisclaimer = page.getByText('Get answers to your Sauce questions');
+    this._inputEmail = page.locator("#user-name");
+    this._inputPassword = page.locator('#password');
+    this._buttonLogin = page.locator('#login-button');
+    this._footerLegalDisclaimer = page.locator('.footer_copy');
   }
 
   public async goto(): Promise<void> {
-    await this.page.goto('https://support.saucelabs.com/s/login/?language=en_US');
+    await this.page.goto('https://saucedemo.com');
     this._initialUrl = this.page.url();
   }
 
