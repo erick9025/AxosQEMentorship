@@ -4,7 +4,7 @@ const credentials = require('./Credentials.json');
 test('Escribir and Click Actions', async ({ page }) => {
   await page.goto('https://support.saucelabs.com/s/login/?language=en_US');
 
-  await page.locator('label.uiLabel-left.form-element__label.uiLabel').fill(credentials.user);
+  await page.locator("input[placeholder='Email']").fill(credentials.user);
   await page.locator("#input-6").fill(credentials.password);
   await page.waitForTimeout(5000);
 

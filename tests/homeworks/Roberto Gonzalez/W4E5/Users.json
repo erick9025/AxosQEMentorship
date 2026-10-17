@@ -1,0 +1,17 @@
+﻿{
+  "password": "secret_sauce",
+  "users": [
+    {
+      "username": "standard_user",
+      "shouldLogin": true
+    },
+    {
+      "username": "visual_user",
+      "shouldLogin": true
+    },
+    {
+      "username": "locked_out_user",
+      "shouldLogin": false
+    }
+  ]
+}
