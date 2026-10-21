@@ -11,7 +11,8 @@
     "run:ts": "tsx",
     "typecheck": "tsc --noEmit",
     "testSep28": "npx playwright test testEvenYearsInTwoWays.spec.ts",
-    "testOct07": "npx playwright test oct7.spec.ts --headed --workers=6 --retries=1"
+    "testOct07": "npx playwright test oct7.spec.ts --headed --workers=6 --retries=1",
+    "testOct19": "npx playwright test EJW5E1.spec.ts --headed --workers=8 --retries=0"
   },
   "repository": {
     "type": "git",
