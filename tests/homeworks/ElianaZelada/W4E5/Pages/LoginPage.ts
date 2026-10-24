@@ -1,6 +1,3 @@
-import * as fs from "fs";
-import * as path from "path";
-import { test, expect } from "@playwright/test";
 import { Page, Locator } from "@playwright/test";
 
 export class LoginPage {

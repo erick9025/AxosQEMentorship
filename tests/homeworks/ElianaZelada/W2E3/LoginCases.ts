@@ -16,7 +16,7 @@ export class Caso1 implements ICasoDePrueba {
 export class Caso2 implements ICasoDePrueba {
   public id: number = 2;
   public titulo: string = 'Login con contraseña incorrecta';
-  public estado: 'Pass' | 'Fail' = 'Fail';
+  public estado: 'Passed' | 'Failed' = 'Failed';
 }
 
 

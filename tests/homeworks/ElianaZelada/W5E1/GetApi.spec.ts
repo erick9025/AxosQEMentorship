@@ -1,4 +1,4 @@
-import { test, expect, APIResponse } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 
 test.describe("API dummy", () => {
   test("Get API", async ({ request }) => {
@@ -7,18 +7,12 @@ test.describe("API dummy", () => {
     );
 
     expect(response.status()).toBe(200);
-    const body: any = await response.json();
+    const body = await response.json();
 
     console.log("Response body:", body);
 
-    console.log("latitude:", body.location.latitude);
-    console.log("longitude:", body.location.longitude);
-    console.log("accuracy:", body.accuracy);
-    console.log("name:", body.name);
-    console.log("phone_number:", body.phone_number);
-    console.log("address:", body.address);
-    console.log("types:", body.types);
-    console.log("website:", body.website);
-    console;
+    expect(body.location.latitude).toBeTruthy();
+    expect(body.location.longitude).toBeTruthy();
+    expect(body.name).toBeTruthy();
   });
 });

@@ -7,7 +7,7 @@ test("Crear un lugar y buscarlo con GET", async ({ request }) => {
       lng: 83.427362,
     },
     accuracy: 2,
-    name: "Cafe Unosquare Mentorship",
+    name: `Cafe Unosquare Mentorship ${Date.now()}`,
     phone_number: "(52) 55 4000 4000",
     address: "Patria 123",
     types: ["coffe", "restaurant", "bar", "brunch"],
@@ -30,7 +30,8 @@ test("Crear un lugar y buscarlo con GET", async ({ request }) => {
   console.log("ID del lugar creado:", placeId);
 
   const getResponse = await request.get(
-    `https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=${placeId}`,
+    "https://rahulshettyacademy.com/maps/api/place/get/json",
+    { params: { key: "qaclick123", place_id: placeId } },
   );
 
   expect(getResponse.status()).toBe(200);

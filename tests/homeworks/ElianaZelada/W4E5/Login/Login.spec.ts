@@ -1,9 +1,7 @@
-import * as fs from "fs";
-import * as path from "path";
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../../W4E5/Pages/LoginPage";
 import { InventoryPage } from "../../W4E5/Pages/InventoryPage";
-const Datos = require("../../W4E5/Data/Users.json");
+const Datos = require("../../W4E5/data/Users.json");
 
 test("Verify Login successfully with standard user", async ({ page }) => {
   const loginPage = new LoginPage(page);

@@ -12,7 +12,6 @@
   "include": [
     "basics/**/*.ts",
     "tests/**/*.ts",
-    "playwright.config.ts",
-    "tests/homeworks/ElianaZelada/W5E2/ValidateGet.spec,ts"
+    "playwright.config.ts"
   ]
 }

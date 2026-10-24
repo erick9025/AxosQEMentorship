@@ -24,6 +24,8 @@ test.describe("API dummy", () => {
     expect(response.status()).toBe(200);
 
     const body = await response.json();
-    console.log("Response body:", body);
+    expect(body.status).toBe("OK");
+    expect(body.place_id).toBeTruthy();
+    console.log("Created place ID:", body.place_id);
   });
 });

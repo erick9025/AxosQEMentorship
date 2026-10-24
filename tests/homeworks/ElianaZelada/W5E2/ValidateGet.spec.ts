@@ -22,6 +22,7 @@ test.describe("API dummy", () => {
 
     const accuracy = Number(body.accuracy);
     expect(Number.isFinite(accuracy)).toBe(true);
+    expect(accuracy).toBeGreaterThan(0);
 
     for (const field of [
       "name",
