@@ -13,13 +13,13 @@ export class InventoryPage {
     this.firstProductImage = page.locator('[data-test="inventory-item-sauce-labs-backpack-img"]');
   }
 
-  async validatePageLoaded() {
-    await expect(this.page).toHaveURL(/.*saucedemo.com\/inventory.html/);
+  async validatePageLoaded(): Promise<void> {
+    await this.page.waitForURL(/.*saucedemo.com\/inventory.html/);
     await expect(this.productSortContainer).toBeVisible();   
     await expect(this.pageTitle).toHaveText('Products');
   }
 
-  async validateInventoryBehavior(username: string, performanceDuration: number) {
+  async validateInventoryBehavior(username: string, performanceDuration: number): Promise<void> {
     await this.validatePageLoaded();
 
     switch (username) {
@@ -29,7 +29,7 @@ export class InventoryPage {
         break;
 
       case 'performance_glitch_user':
-        expect(performanceDuration).toBeGreaterThanOrEqual(5000);
+        expect(performanceDuration, 'El tiempo de espera de carga debe simular un glitch de red').toBeGreaterThanOrEqual(5000);
         break;
 
       default:
