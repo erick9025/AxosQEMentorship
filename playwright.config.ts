@@ -7,7 +7,7 @@ export default defineConfig({
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: 1,
+  workers: 2,
   reporter: [["html", { open: "never" }]],
   use: {
     trace: "retain-on-failure",
@@ -16,7 +16,11 @@ export default defineConfig({
   projects: [
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: { ...devices["Desktop Chrome"], browserName: "chromium" },
+    },
+    {
+      name: "firefox",
+      use: { ...devices["Desktop Firefox"], browserName: "firefox" },
     },
   ],
 });
