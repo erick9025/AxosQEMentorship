@@ -8,6 +8,9 @@
     "test": "echo \"Erick Jimenez Rodriguez\"",
     "run:ts": "tsx",
     "typecheck": "tsc --noEmit",
+    "gitHistoryRecent": "git log --oneline -n 5",
+    "gitHistoryExtended": "git log --oneline -n 25",
+    "gitHistoryExtendedByPerson": "git log --pretty=format:\"%h %an %s\" -n 25",
     "testSep28": "npx playwright test testEvenYearsInTwoWays.spec.ts",
     "testOct07": "npx playwright test oct7.spec.ts --headed --workers=6 --retries=1",
     "testOct19": "npx playwright test EJW5E1.spec.ts --headed --workers=8 --retries=0"
