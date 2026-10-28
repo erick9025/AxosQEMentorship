@@ -31,8 +31,6 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
     screenshot: 'on',
-    ...devices['Desktop Edge'],
-    channel: 'msedge',
   },
 
   /* Configure projects for major browsers */ 
@@ -42,12 +40,12 @@ export default defineConfig({
       use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },
 
-    /*{
+    {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
 
-    {
+    /*{
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },*/

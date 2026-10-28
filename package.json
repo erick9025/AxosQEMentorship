@@ -8,6 +8,7 @@
     "test": "echo \"Erick Jimenez Rodriguez\"",
     "run:ts": "tsx",
     "typecheck": "tsc --noEmit",
+    "test:oct27:local": "playwright test \"tests/homeworks/Gerardo Miranda/W6E2/oct27Homework.spec.ts\" --project=edge --project=firefox",
     "test28Sep": "npx playwright test testEvenYearsInTwoWays.spec.ts"
   },
   "repository": {
