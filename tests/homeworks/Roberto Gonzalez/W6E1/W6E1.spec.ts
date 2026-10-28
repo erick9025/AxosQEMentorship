@@ -32,3 +32,13 @@ test('Escribir and Click Actions', async ({ page }) => {
 
   })
 });
+
+test('Mostrar los campos del formulario de inicio de sesión', async ({ page }) => {
+  await expect(page.locator('input[placeholder="Email"]')).toBeVisible();
+  await expect(page.locator('#input-6')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Log in' })).toBeVisible();
+});
+
+test('Ocultar la contraseña en el campo correspondiente', async ({ page }) => {
+  await expect(page.locator('#input-6')).toHaveAttribute('type', 'password');
+});
