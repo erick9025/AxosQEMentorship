@@ -9,7 +9,12 @@
     "report": "playwright show-report",
     "run:ts": "tsx",
     "typecheck": "tsc --noEmit",
-    "test28Sep": "npx playwright test testEvenYearsInTwoWays.spec.ts"
+    "gitHistoryRecent": "git log --oneline -n 5",
+    "gitHistoryExtended": "git --no-pager log --oneline -n 25",
+    "gitHistoryExtendedByPerson": "git --no-pager log --pretty=format:\"%h %an %s\" -n 25",
+    "testSep28": "npx playwright test testEvenYearsInTwoWays.spec.ts",
+    "testOct07": "npx playwright test oct7.spec.ts --headed --workers=6 --retries=1",
+    "testOct19": "npx playwright test EJW5E1.spec.ts --headed --workers=8 --retries=0"
   },
   "repository": {
     "type": "git",
