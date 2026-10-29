@@ -31,4 +31,15 @@ test.describe('Valid Navigation to Products page without images', () => {
 
     })
 
+    test('Validate products page is loaded without images REGULAR', async ({ page }) => {
+        const shopLocator: Locator = page.locator("//a[text()='Shop']");
+        const productsTitleLocator: Locator = page.locator("//h1[text()='Our Coffee Collection']");
+
+        await shopLocator.click();
+        await page.waitForLoadState('networkidle');
+        
+        await expect(productsTitleLocator).toBeVisible();
+        await expect(page).toHaveURL(/products/);
+    })
+
 })
