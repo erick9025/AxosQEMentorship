@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pom/pom/sauceLogInPage';
 import { InventoryPage } from '../pom/pom/sauceInventoryPage';
-const testData = require('../users/usersGera.json');
+import testData from '../users/usersGera.json';
 
 test.describe('Homework October 27', () => {
   let loginPage: LoginPage;
