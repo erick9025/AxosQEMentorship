@@ -56,4 +56,24 @@ test.describe("Pruebas de login", () => {
 
     expect(imageSrc).toContain("/assets/sl-404-Cq1a9k9X.jpg");
   });
+  test("Bloquea las imágenes para acelerar la prueba", async ({ page }) => {
+    const User = Datos.usuarios.standard;
+    let imagenesBloqueadas = 0;
+
+    await page.route("**/*", async (route) => {
+      if (route.request().resourceType() === "image") {
+        imagenesBloqueadas += 1;
+        await route.abort();
+        return;
+      }
+
+      await route.continue();
+    });
+
+    await loginPage.login(User.username, User.password);
+
+    await expect(inventoryPage.ProductsTitle).toHaveText("Products");
+    expect(imagenesBloqueadas).toBeGreaterThan(0);
+  });
 });
+
