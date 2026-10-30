@@ -52,9 +52,10 @@ test("creates a record through the API and verifies it visually in the browser",
 
 		console.log(`[Browser] Status: ${response?.status()}`);
 		expect(response?.status()).toBe(200);
-		await expect(page.locator("body")).toContainText(retrievedUser.id);
-		await expect(page.locator("body")).toContainText(retrievedUser.name);
-		await expect(page.locator("body")).toContainText(retrievedUser.data.email);
-		await expect(page.locator("body")).toContainText(retrievedUser.data.job);
+		const document = page.locator("html");
+		await expect(document).toContainText(retrievedUser.id);
+		await expect(document).toContainText(retrievedUser.name);
+		await expect(document).toContainText(retrievedUser.data.email);
+		await expect(document).toContainText(retrievedUser.data.job);
 	});
 });
