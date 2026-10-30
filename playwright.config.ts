@@ -7,7 +7,7 @@ export default defineConfig({
     /** Maximum time expect() should wait for the condition to be met. */
     timeout: 5_000,
   },
-  testDir: './tests',
+  testDir: "./tests",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -21,8 +21,8 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on',
-    screenshot: 'on',
+    trace: "retain-on-failure",
+    screenshot: "on",
     launchOptions: {
       slowMo: 300,
     },

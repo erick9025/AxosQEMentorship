@@ -13,7 +13,8 @@ export class LoginPage {
     this.InputUsername = page.locator('[data-test="username"]');
     this.passwordInput = page.locator('[data-test="password"]');
     this.loginButton = page.locator('[data-test="login-button"]');
-    this.errorMessage = page.locator('[data-test="error"]');
+    // Falla a propósito: este selector no existe en la página.
+    this.errorMessage = page.locator('[data-test="erroressssssssssss"]');
   }
 
   async navigateToLoginPage() {
