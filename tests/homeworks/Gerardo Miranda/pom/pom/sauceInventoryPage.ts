@@ -16,7 +16,7 @@ export class InventoryPage {
   async validatePageLoaded(): Promise<void> {
     await this.page.waitForURL(/.*saucedemo.com\/inventory.html/);
     await expect(this.productSortContainer).toBeVisible();   
-    await expect(this.pageTitle).toHaveText('Products');
+    await expect(this.pageTitle).toHaveText('Productos que fallan');
   }
 
   async validateInventoryBehavior(username: string, performanceDuration: number): Promise<void> {
