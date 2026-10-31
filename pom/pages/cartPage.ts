@@ -12,13 +12,14 @@ export class CartPage extends BasePage {
         this.productNames = this.cartItems.locator(".inventory_item_name");
     }
 
-    private async getProductsName(): Promise<string[]> {
+    private async getProductsName(products: string[]): Promise<string[]> {
+        await BaseAssertions.validateLocatorCount(this.productNames, products.length)
         return await this.productNames.allTextContents();
     }
 
     public async validateProductsAddedToCart(products: string[]): Promise<void> {
-        const productsName: string [] = await this.getProductsName();
-        BaseAssertions.validateArraysAreEquals(productsName, products);
+        const productsName: string [] = await this.getProductsName(products);
+        await BaseAssertions.validateArraysAreEquals(productsName, products);
     }
 
 }

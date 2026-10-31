@@ -9,14 +9,13 @@ export class ProductCard {
         this.actionButton = card.locator("button");
     }
 
-    public async getName(): Promise <string> {
+    public async getName(): Promise<string> {
         return (await this.productName.textContent())?.trim() ?? "";
-       
     }
 
     public async clickActionButton(): Promise<void> {
+        const productName: string = await this.getName();
         await this.actionButton.click();
-        console.log(`Product ${this.getName()} is being added to the cart`)
+        console.log(`Product ${productName} is being added to the cart`)
     }
-
 }

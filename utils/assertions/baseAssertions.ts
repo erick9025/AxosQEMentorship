@@ -26,8 +26,12 @@ export class BaseAssertions {
         await expect(locator).toHaveText(text);
         console.log(`Element ${locator} has the text ${text}`);
     }
+    public static async validateLocatorCount(locator: Locator, count: number): Promise <void> {
+        await expect(locator).toHaveCount(count);
+        console.log(`Locator: ${locator} has the count: ${count}`);
+    }
 
-    public static validateArraysAreEquals(actualArray: string[], expectedArray: string[]): void {
+    public static async validateArraysAreEquals(actualArray: string[], expectedArray: string[]): Promise <void> {
         expect(actualArray).toEqual(expectedArray);
         console.log(`Actual array: ${actualArray} is equal to expected array: ${expectedArray}`);
     }
