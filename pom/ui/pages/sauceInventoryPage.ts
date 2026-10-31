@@ -29,7 +29,7 @@ export class InventoryPage {
         break;
 
       case 'performance_glitch_user':
-        expect(performanceDuration, 'El tiempo de espera de carga debe simular un glitch de red').toBeGreaterThanOrEqual(5000);
+        expect(performanceDuration, 'The wait time should simulate a network glitch').toBeGreaterThanOrEqual(5000);
         break;
 
       default:
