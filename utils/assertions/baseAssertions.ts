@@ -35,4 +35,11 @@ export class BaseAssertions {
         expect(actualArray).toEqual(expectedArray);
         console.log(`Actual array: ${actualArray} is equal to expected array: ${expectedArray}`);
     }
+
+    /* -------------------------------- API Assertions ---------------------------------- */
+
+    public static async validateStatusCode(actualStatusCode: number, expectedStatusCode: number) {
+        await expect(actualStatusCode).toBe(expectedStatusCode);
+        console.log(`Actual status code: ${actualStatusCode} mathces with the expected Status code: ${expectedStatusCode}`);
+    }
 }
