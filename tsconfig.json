@@ -17,7 +17,6 @@
     "tests/**/*.ts",
     "pom/**/*.ts",
     "api/**/*.ts",
-    "fixtures/**/*.ts",
     "utils/**/*.ts",
     "playwright.config.ts"
   ]

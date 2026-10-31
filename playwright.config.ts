@@ -23,7 +23,7 @@ export default defineConfig({
 
     {
       name: 'firefox',
-      testIgnore: ['**/api/**', '**/integration/**'],
+      testIgnore: ['**/api/**'],
       use: { ...devices['Desktop Firefox'] },
     },
 
@@ -31,7 +31,8 @@ export default defineConfig({
       name: 'api',
       testMatch: '**/api/**/*.spec.ts',
       use: {
-        baseURL: 'https://api.restful-api.dev'
+        baseURL: 'https://api.restful-api.dev',
+        ignoreHTTPSErrors: true
       }
     },
   ]

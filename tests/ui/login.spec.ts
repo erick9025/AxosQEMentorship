@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
 import { LoginPage } from "../../pom/pages/loginPage";
-import userData from '../testData/users.json'
+import userData from './testData/users.json'
 
 test.describe("Login scenarios", () => {
 

@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { LoginPage } from "../../pom/pages/loginPage";
-import userData from '../testData/users.json'
-import productsData from '../testData/products.json'
+import userData from './testData/users.json'
+import productsData from './testData/products.json'
 import { InventoryPage } from "../../pom/pages/inventoryPage";
 import { CartPage } from "../../pom/pages/cartPage";
 
