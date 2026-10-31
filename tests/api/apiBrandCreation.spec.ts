@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { BrandCreation } from '../../test-support/api/clients/brandCreation';
+import { BrandCreation } from '../../pom/api/clients/brandCreation';
 
 test.describe('Brand Creation and Validation', () => {
   test('creates a brand through the API and finds it in the UI', async ({

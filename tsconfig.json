@@ -10,5 +10,5 @@
     "types": ["node"],
     "resolveJsonModule": true
   },
-  "include": ["test-support/**/*.ts", "tests/**/*.ts", "playwright.config.ts"]
+  "include": ["pom/**/*.ts", "tests/**/*.ts", "playwright.config.ts"]
 }

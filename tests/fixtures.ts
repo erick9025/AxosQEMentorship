@@ -1,8 +1,8 @@
 import { test as base, expect } from '@playwright/test';
-import { InventoryPage } from '../test-support/ui/pages/sauceInventoryPage';
-import { LoginPage } from '../test-support/ui/pages/sauceLogInPage';
+import { InventoryPage } from '../pom/ui/pages/sauceInventoryPage';
+import { LoginPage } from '../pom/ui/pages/sauceLogInPage';
 import importedTestData from './test-data/sauceDemoUsers.json';
-import { TestUtilities } from '../test-support/logging/testUtilities';
+import { TestUtilities } from '../pom/logging/testUtilities';
 
 export const sauceDemoTestData = importedTestData;
 

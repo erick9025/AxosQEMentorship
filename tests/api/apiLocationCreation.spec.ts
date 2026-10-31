@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { LocationCreation } from '../../test-support/api/clients/locationCreation';
+import { LocationCreation } from '../../pom/api/clients/locationCreation';
 
 test.describe('Location Creation and Validation', () => {
   test('Create a place with a POST call and retrieve it successfully with a GET call', async ({
