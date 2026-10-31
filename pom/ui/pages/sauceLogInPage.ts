@@ -39,16 +39,12 @@ export class LoginPage {
     await expect(this.loginButton).toBeVisible();
   }
 
-  async loginAndValidate(username: string, password: string): Promise<{ duration: number }> {
-    const startTime = Date.now();
+  async loginAndValidate(username: string, password: string): Promise<void> {
     await this.login(username, password);
-    const duration = Date.now() - startTime;
 
     if (username === 'locked_out_user') {
       await expect(this.errorContainer).toBeVisible();
       await expect(this.errorContainer).toContainText(/locked out/i);
     }
-
-    return { duration };
   }
 }

@@ -1,4 +1,5 @@
 import { Page, Locator, expect } from '@playwright/test';
+import { performance } from 'node:perf_hooks';
 
 export class InventoryPage {
   readonly page: Page;
@@ -19,7 +20,7 @@ export class InventoryPage {
     await expect(this.pageTitle).toHaveText('Products');
   }
 
-  async validateInventoryBehavior(username: string, performanceDuration: number): Promise<void> {
+  async validateInventoryBehavior(username: string, loginStartedAt: number): Promise<void> {
     await this.validatePageLoaded();
 
     switch (username) {
@@ -29,6 +30,7 @@ export class InventoryPage {
         break;
 
       case 'performance_glitch_user':
+        const performanceDuration = performance.now() - loginStartedAt;
         expect(performanceDuration, 'The wait time should simulate a network glitch').toBeGreaterThanOrEqual(5000);
         break;
 
