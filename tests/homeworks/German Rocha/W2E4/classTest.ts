@@ -7,5 +7,7 @@ class Tester {
   }
   
   const QE = new Tester();
-  console.log(QE.name); // saca el nombre
-  QE.startAutomation(); // saca mensaje de inicio de pruebas
+  // saca el nombre
+  console.log(QE.name); 
+  // saca mensaje de inicio de pruebas
+  QE.startAutomation(); 
