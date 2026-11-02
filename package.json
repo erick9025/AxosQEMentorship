@@ -1,36 +1,25 @@
 {
   "name": "axosqementorship",
   "version": "1.0.0",
-  "description": "Axos QE Mentorship with Playwright + TypeScript",
-  "main": "index.js",
+  "private": true,
+  "description": "UI and API automation framework built with Playwright and TypeScript",
   "scripts": {
-    "regen": "npx playwright show-report",
-    "test": "echo \"Erick Jimenez Rodriguez\"",
-    "run:ts": "tsx",
-    "typecheck": "tsc --noEmit",
-    "gitHistoryRecent": "git log --oneline -n 5",
-    "gitHistoryExtended": "git --no-pager log --oneline -n 25",
-    "gitHistoryExtendedByPerson": "git --no-pager log --pretty=format:\"%h %an %s\" -n 25",
-    "testSep28": "npx playwright test testEvenYearsInTwoWays.spec.ts",
-    "testOct07": "npx playwright test oct7.spec.ts --headed --workers=6 --retries=1",
-    "testOct19": "npx playwright test EJW5E1.spec.ts --headed --workers=8 --retries=0"
+    "test": "playwright test",
+    "test:ui": "playwright test --project=chromium --project=firefox",
+    "test:api": "playwright test --project=api",
+    "test:integration": "playwright test tests/integration",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/erick9025/AxosQEMentorship.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/erick9025/AxosQEMentorship/issues"
-  },
-  "homepage": "https://github.com/erick9025/AxosQEMentorship#readme",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
     "@types/node": "^26.6.2",
-    "tsx": "^4.23.15",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
     "typescript": "^7.0.2"
   }
 }

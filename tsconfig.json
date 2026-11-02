@@ -8,7 +8,16 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["node"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "noEmit": true
   },
-  "include": ["basics/**/*.ts", "tests/**/*.ts", "playwright.config.ts", "tests/homeworks/Erick Jimenez/oct 07/ternaryOperator.js"]
+  "include": [
+    "api/**/*.ts",
+    "config/**/*.ts",
+    "fixtures/**/*.ts",
+    "pom/**/*.ts",
+    "tests/**/*.ts",
+    "utils/**/*.ts",
+    "playwright.config.ts"
+  ]
 }
