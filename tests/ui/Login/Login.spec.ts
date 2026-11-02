@@ -1,14 +1,14 @@
 import { test, expect } from "@playwright/test";
 
 // Importa los Page Objects que encapsulan las acciones y elementos de cada página.
-import { LoginPage } from "../../../pom/Pages/LoginPage";
-import { InventoryPage } from "../../../pom/Pages/InventoryPage";
+import { LoginPage } from "../../../pom/pages/LoginPage";
+import { InventoryPage } from "../../../pom/pages/InventoryPage";
 
 // Carga las credenciales de prueba desde el archivo JSON.
-const Datos = require("../../../pom/data/Users.json");
+const Data = require("../../../pom/data/Users.json");
 
 // Agrupa las pruebas relacionadas con el inicio de sesión.
-test.describe("Pruebas de login", () => {
+test.describe("Login test", () => {
   // Variables para acceder a las páginas de login e inventario.
   let loginPage: LoginPage;
   let inventoryPage: InventoryPage;
@@ -28,7 +28,7 @@ test.describe("Pruebas de login", () => {
 
   // Comprueba que el usuario estándar pueda iniciar sesión y llegar al inventario.
   test("Verify Login successfully with standard user", async () => {
-    const User = Datos.usuarios.standard;
+    const User = Data.users.standard;
 
     await loginPage.login(User.username, User.password);
 
@@ -39,7 +39,7 @@ test.describe("Pruebas de login", () => {
 
   // Comprueba que el usuario bloqueado no pueda iniciar sesión.
   test("Verify that locked out user cannot login", async () => {
-    const User = Datos.usuarios.bloqueado;
+    const User = Data.users.Blocked;
 
     await loginPage.login(User.username, User.password);
     await expect(loginPage.errorMessage).toContainText("locked out");
@@ -47,7 +47,7 @@ test.describe("Pruebas de login", () => {
 
   // Comprueba que la cuenta visual muestre la imagen esperada.
   test("Visual user displays the expected image", async ({ page }) => {
-    const User = Datos.usuarios.Visual;
+    const User = Data.users.Visual;
 
     await loginPage.login(User.username, User.password);
 
@@ -56,7 +56,7 @@ test.describe("Pruebas de login", () => {
     // Muestra información de diagnóstico en la consola de la prueba.
     console.log("URL actual:", page.url());
     console.log(
-      "Cantidad de imágenes:",
+      "Total images:",
       await inventoryPage.InventoryItemImage.count(),
     );
 
@@ -68,16 +68,16 @@ test.describe("Pruebas de login", () => {
   });
 
   // Intercepta las solicitudes de red para impedir la descarga de imágenes.
-  test("Bloquea las imágenes para acelerar la prueba", async ({ page }) => {
-    const User = Datos.usuarios.standard;
+  test("Block images to speed up the test", async ({ page }) => {
+    const User = Data.users.standard;
 
     // Lleva la cuenta de las solicitudes de imágenes que se cancelan.
-    let imagenesBloqueadas = 0;
+    let blockedImages = 0;
 
     // Examina cada solicitud: cancela imágenes y permite continuar las demás.
     await page.route("**/*", async (route) => {
       if (route.request().resourceType() === "image") {
-        imagenesBloqueadas += 1;
+        blockedImages += 1;
         await route.abort();
         return;
       }
@@ -90,6 +90,6 @@ test.describe("Pruebas de login", () => {
 
     // Confirma que la página cargó y que al menos una imagen fue bloqueada.
     await expect(inventoryPage.ProductsTitle).toHaveText("Products");
-    expect(imagenesBloqueadas).toBeGreaterThan(0);
+    expect(blockedImages).toBeGreaterThan(0);
   });
 });

@@ -1,11 +1,11 @@
 {
   "baseUrl": "https://www.saucedemo.com",
-  "usuarios": {
+  "users": {
     "standard": {
       "username": "standard_user",
       "password": "secret_sauce"
     },
-    "bloqueado": {
+    "Blocked": {
       "username": "locked_out_user",
       "password": "secret_sauce"
     },
