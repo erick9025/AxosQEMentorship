@@ -2,7 +2,7 @@ import { Page, Locator } from "@playwright/test";
 
 export class LoginPage {
   readonly page: Page;
-  readonly InputUsername: Locator;
+  readonly usernameInput: Locator;
   readonly passwordInput: Locator;
   readonly loginButton: Locator;
   readonly errorMessage: Locator;
@@ -10,7 +10,7 @@ export class LoginPage {
   constructor(page: Page) {
     this.page = page;
 
-    this.InputUsername = page.locator('[data-test="username"]');
+    this.usernameInput = page.locator('[data-test="username"]');
     this.passwordInput = page.locator('[data-test="password"]');
     this.loginButton = page.locator('[data-test="login-button"]');
     // Falla a propósito: este selector no existe en la página.
@@ -22,7 +22,7 @@ export class LoginPage {
   }
 
   async login(userName: string, password: string) {
-    await this.InputUsername.fill(userName);
+    await this.usernameInput.fill(userName);
     await this.passwordInput.fill(password);
     await this.loginButton.click();
   }
