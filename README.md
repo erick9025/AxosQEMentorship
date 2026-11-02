@@ -1,48 +1,54 @@
-# Axos QE Mentorship — Playwright portfolio
+# Playwright automation framework
 
-A collection of Playwright and TypeScript exercises covering UI automation, page objects, data-driven tests, and REST API testing.
+A compact UI and API automation framework built with Playwright, TypeScript, and Page Object Model.
 
 ## Requirements
 
 - Node.js 20 or newer
-- Dependencies installed with `npm install`
-- Chromium installed for Playwright with `npx playwright install chromium`
+- Install dependencies with `npm install`
+- Install browsers with `npx playwright install chromium firefox`
 
-## Run the tests
+## Project layout
+
+```text
+pom/
+  pages/                 Page Object classes for SauceDemo
+    parent/              Shared base page
+ tests/
+  api/                   REST API tests
+  data/                  Test data
+  fixtures/              Shared Playwright fixtures and Page Objects
+  ui/                    Browser UI tests
+playwright.config.ts     Chromium and Firefox projects
+```
+
+## Run tests
 
 ```bash
 npm test
 ```
 
-The Playwright HTML report is generated in `playwright-report/` after the run. Open it with:
+Run one browser or one test group:
 
 ```bash
-npm run report
-```
-
-Run the API exercises only:
-
-```bash
+npm run test:chromium
+npm run test:firefox
+npm run test:ui
 npm run test:api
 ```
 
-Check TypeScript files:
+Check TypeScript without generating output:
 
 ```bash
 npm run typecheck
 ```
 
-## API exercises (W5E1–W5E4)
+The HTML report is generated in `playwright-report/`. Open the latest report with:
 
-The API exercises use the Rahul Shetty Maps practice API:
+```bash
+npm run report
+```
 
-- W5E1 retrieves a place and checks the response.
-- W5E2 validates coordinate ranges and response fields.
-- W5E3 creates a place and checks the returned `place_id`.
-- W5E4 creates a place, extracts its `place_id`, and retrieves it immediately with GET.
+## Coverage
 
-The add-place endpoint returns HTTP `200 OK` and a JSON body with `status: "OK"` and `place_id`; it does not return `201 Created`. The Maps API is a practice API without a user-facing UI, so the POST-to-GET test verifies that the created data can be retrieved.
-
-## UI exercises
-
-The UI exercises use SauceDemo and TestMu Selenium Playground. They are separate from the Maps API exercises because the Maps practice API does not share data with those sites.
+The SauceDemo UI suite covers standard and locked-out login behavior, adding a product to the cart, expected product imagery, and loading the inventory while image requests are blocked. The API suite creates an object through `POST /objects`, extracts its generated ID, retrieves it with `GET /objects/{id}`, and checks the returned fields.

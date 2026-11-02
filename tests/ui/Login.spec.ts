@@ -1,12 +1,11 @@
-// Importa las funciones de Playwright para crear pruebas y hacer aserciones.
 import { test, expect } from "@playwright/test";
 
 // Importa los Page Objects que encapsulan las acciones y elementos de cada página.
-import { LoginPage } from "../W4E5/Pages/LoginPage";
-import { InventoryPage } from "../W4E5/Pages/InventoryPage";
+import { LoginPage } from "../../pom/Pages/LoginPage";
+import { InventoryPage } from "../../pom/Pages/InventoryPage";
 
 // Carga las credenciales de prueba desde el archivo JSON.
-const Datos = require("../W4E5/data/Users.json");
+const Datos = require("../../pom/data/Users.json");
 
 // Agrupa las pruebas relacionadas con el inicio de sesión.
 test.describe("Pruebas de login", () => {
@@ -43,7 +42,6 @@ test.describe("Pruebas de login", () => {
     const User = Datos.usuarios.bloqueado;
 
     await loginPage.login(User.username, User.password);
-    // Falla a propósito: este selector no existe en la página.
     await expect(loginPage.errorMessage).toContainText("locked out");
   });
 

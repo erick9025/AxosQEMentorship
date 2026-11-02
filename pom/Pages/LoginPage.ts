@@ -14,7 +14,7 @@ export class LoginPage {
     this.passwordInput = page.locator('[data-test="password"]');
     this.loginButton = page.locator('[data-test="login-button"]');
     // Falla a propósito: este selector no existe en la página.
-    this.errorMessage = page.locator('[data-test="erroressssssssssss"]');
+    this.errorMessage = page.locator('[data-test="error"]');
   }
 
   async navigateToLoginPage() {

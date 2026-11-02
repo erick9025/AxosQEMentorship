@@ -8,7 +8,15 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["node"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "noEmit": true
   },
-  "include": ["basics/**/*.ts", "tests/**/*.ts", "playwright.config.ts", "tests/homeworks/Erick Jimenez/oct 07/ternaryOperator.js"]
+  "include": [
+    "pom/**/*.ts",
+    "tests/api/**/*.ts",
+    "tests/fixtures/**/*.ts",
+    "tests/ui/**/*.ts",
+    "playwright.config.ts",
+    "tests/homeworks/ElianaZelada/W4E5/Pages/InventoryPage.ts"
+  ]
 }

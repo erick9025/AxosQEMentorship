@@ -1,33 +1,17 @@
 {
-  "name": "axosqementorship",
+  "name": "axos-qe-playwright-framework",
   "version": "1.0.0",
-  "description": "Axos QE Mentorship with Playwright + TypeScript",
-  "main": "index.js",
+  "private": true,
+  "description": "Playwright UI and API automation framework using TypeScript and Page Object Model.",
   "scripts": {
     "test": "playwright test",
-    "test:api": "playwright test tests/homeworks/ElianaZelada/W5E1 tests/homeworks/ElianaZelada/W5E2 tests/homeworks/ElianaZelada/W5E3 tests/homeworks/ElianaZelada/W5E4",
-    "report": "playwright show-report",
-    "run:ts": "tsx",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:ui": "playwright test tests/ui",
+    "test:api": "playwright test tests/api",
     "typecheck": "tsc --noEmit",
-    "gitHistoryRecent": "git log --oneline -n 5",
-    "gitHistoryExtended": "git --no-pager log --oneline -n 25",
-    "gitHistoryExtendedByPerson": "git --no-pager log --pretty=format:\"%h %an %s\" -n 25",
-    "testSep28": "npx playwright test testEvenYearsInTwoWays.spec.ts",
-    "testOct07": "npx playwright test oct7.spec.ts --headed --workers=6 --retries=1",
-    "testOct19": "npx playwright test EJW5E1.spec.ts --headed --workers=8 --retries=0"
+    "report": "playwright show-report"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/erick9025/AxosQEMentorship.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/erick9025/AxosQEMentorship/issues"
-  },
-  "homepage": "https://github.com/erick9025/AxosQEMentorship#readme",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
     "@types/node": "^26.6.2",
