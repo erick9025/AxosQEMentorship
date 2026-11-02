@@ -1,11 +1,11 @@
 import { test, expect } from "@playwright/test";
 
 // Importa los Page Objects que encapsulan las acciones y elementos de cada página.
-import { LoginPage } from "../../pom/Pages/LoginPage";
-import { InventoryPage } from "../../pom/Pages/InventoryPage";
+import { LoginPage } from "../../../pom/Pages/LoginPage";
+import { InventoryPage } from "../../../pom/Pages/InventoryPage";
 
 // Carga las credenciales de prueba desde el archivo JSON.
-const Datos = require("../../pom/data/Users.json");
+const Datos = require("../../../pom/data/Users.json");
 
 // Agrupa las pruebas relacionadas con el inicio de sesión.
 test.describe("Pruebas de login", () => {
