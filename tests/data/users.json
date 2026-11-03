@@ -1,0 +1,14 @@
+[
+  {
+    "escenario": "Usuario con correo inválido",
+    "correo": "no_existo_123@correo.com"
+  },
+  {
+    "escenario": "Usuario con formato incorrecto",
+    "correo": "test.user.github@gmail.com"
+  },
+  {
+    "escenario": "Usuario vacío o erróneo",
+    "correo": "admin_fail_2026@outlook.com"
+  }
+]
